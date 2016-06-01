@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+ 	<groupId>com.huma</groupId>
+  	<artifactId>OA-ROOT</artifactId>
+  	<version>0.0.1-SNAPSHOT</version>
+  	<relativePath>../OA-ROOT/pom.xml</relativePath>
+  </parent>
+  
+  <artifactId>OA-WEB</artifactId>
+  <packaging>war</packaging>
+  
+  <name>oa-web</name>
+  <url>http://maven.apache.org</url>
+   
+   <dependencies> 
+	   <dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>oscache</artifactId>
+			<version>2.3</version>
+		</dependency>  
+	    <dependency>
+	      <groupId>com.huma</groupId>
+	      <artifactId>OA-BUSINESS</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+  </dependencies> 
+
+    <build>
+    		<finalName>oa</finalName>
+ 	 </build>
+</project>

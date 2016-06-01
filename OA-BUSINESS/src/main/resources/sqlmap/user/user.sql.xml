@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace必须指向Dao接口 -->
+<mapper namespace="com.huma.oa.business.user.dao.UserDao">
+	
+	<select id="get" parameterType="com.huma.oa.business.user.bean.User" resultType="com.huma.oa.business.user.bean.User">
+		select id,name,password from oa_user where id=2;
+	</select>
+</mapper> 

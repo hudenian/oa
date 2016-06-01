@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
+  xsi:schemaLocation="  
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd  
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd  
+        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd  
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+  <context:component-scan base-package="com.huma.*">
+    <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+    <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+  </context:component-scan>
+
+  <bean id="sqlSessionFactory" class="com.huma.oa.base.mybatis.DummyMappedSqlSessionFactoryBean">
+    <property name="dataSource" ref="dataSource" />
+    <property name="configLocation" value="classpath:config/sqlmap-config.xml" />
+    <property name="typeAliasesPackage" value="com.huma.oa.business.*.bean" />
+    <property name="mapperLocations" value="classpath:sqlmap/**/*.sql.xml" />
+  </bean>
+
+  <!-- 扫描basePackage下所有以@MyBatisRepository标识的 接口 -->
+  <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+    <property name="basePackage" value="com.huma.oa.business.**.dao" />
+    <property name="annotationClass" value="com.huma.oa.base.mybatis.MyBatisRepository" />
+  </bean>
+
+  <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+    <property name="dataSource" ref="dataSource"></property>
+  </bean>
+
+  <!-- -->
+  <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true" />
+
+  <!-- 启动对@AspectJ注解的支持 -->
+  <aop:aspectj-autoproxy  />
+
+  <bean id="springContextUtil" class="com.huma.oa.base.spring.utils.SpringContextUtil" />
+
+  <bean id="springContext" class="com.huma.oa.base.spring.utils.SpringContext" />
+<!--  
+  <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor" />    
+
+  <bean id="redisPropertiesInit" class="com.bravowhale.business.common.redis.util.RedisPropertiesInit" init-method="init"/>
+-->
+
+</beans>
