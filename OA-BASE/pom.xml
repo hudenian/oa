@@ -438,11 +438,5 @@
       <artifactId>qiniu-java-sdk</artifactId>
       <version>[7.0.0, 7.0.99]</version>
     </dependency>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
-      <scope>test</scope>
-    </dependency>
   </dependencies>
 </project>
