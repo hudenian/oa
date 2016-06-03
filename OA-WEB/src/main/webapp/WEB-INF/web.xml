@@ -166,7 +166,7 @@
     <listener>
       <listener-class>com.bravowhale.business.sys.listener.ContextStartupListener</listener-class>
     </listener>
--->
+
 
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
@@ -176,7 +176,7 @@
 		<welcome-file>default.htm</welcome-file>
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
-
+-->
 	<!-- Error page 
 	<error-page>
 		<error-code>400</error-code>
