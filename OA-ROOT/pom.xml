@@ -86,4 +86,11 @@
   	<module>../OA-BUSINESS</module>
   	<module>../OA-WEB</module>
   </modules>
+  
+  <distributionManagement>
+	  <snapshotRepository>
+	    <id>oanapshots</id>
+	    <url>http://localhost:8081/nexus/content/repositories/snapshots/</url>
+	  </snapshotRepository>
+	</distributionManagement>
 </project>

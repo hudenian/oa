@@ -21,7 +21,7 @@
 
 
 <!-- 显示表单 -->
-<form:form action="userAction_login" focusElement="loginNameInput">
+<form:form action="${pageContext.request.contextPath }/user/main" focusElement="loginNameInput">
     <div id="CenterAreaBg"> 
         <div id="CenterArea">
             <div id="LogoImg"><img border="0" src="${pageContext.request.contextPath}/style/blue/images/logo.png" /></div>

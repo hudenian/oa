@@ -37,8 +37,8 @@
 		</property>
 	</bean>
 	
-	<!-- 定义首页 -->
-	<mvc:view-controller path="/" view-name="redirect:/login/" />
+	<!-- 定义首页 
+	<mvc:view-controller path="/" view-name="redirect:/login/" />-->
 
 	<!--视图解析器 -->
 	<bean id="viewResolver"
